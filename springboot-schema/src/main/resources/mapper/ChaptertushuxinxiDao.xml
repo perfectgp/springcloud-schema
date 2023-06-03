@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ChaptertushuxinxiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ChaptertushuxinxiEntity" id="chaptertushuxinxiMap">
+        <result property="refid" column="refid"/>
+        <result property="chapternum" column="chapternum"/>
+        <result property="chaptertitle" column="chaptertitle"/>
+        <result property="content" column="content"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ChaptertushuxinxiVO" >
+		SELECT * FROM chaptertushuxinxi  chaptertushuxinxi         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ChaptertushuxinxiVO" >
+		SELECT  chaptertushuxinxi.* FROM chaptertushuxinxi  chaptertushuxinxi 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ChaptertushuxinxiView" >
+
+		SELECT  chaptertushuxinxi.* FROM chaptertushuxinxi  chaptertushuxinxi 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ChaptertushuxinxiView" >
+		SELECT * FROM chaptertushuxinxi  chaptertushuxinxi <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
